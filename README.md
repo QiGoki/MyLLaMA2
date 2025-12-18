@@ -2,6 +2,9 @@
 
 本项目是基于 [Happy-LLM](https://github.com/datawhalechina/happy-llm) 教程搭建的大语言模型实现。
 
+## 参考
+- [Happy-LLM](https://github.com/datawhalechina/happy-llm) - 从零开始的大语言模型原理与实践教程
+
 ## 变更记录
 
 ### 2025-12-18
@@ -12,6 +15,3 @@
 - 添加RMSNorm.py (37行)
   - 实现RMSNorm归一化层
   - 优化计算效率
-
-## 参考
-- [Happy-LLM](https://github.com/datawhalechina/happy-llm) - 从零开始的大语言模型原理与实践教程
