@@ -2,6 +2,7 @@ import math
 
 import torch
 from torch import nn
+import torch.nn.functional as F
 from ModelConfig import ModelConfig
 
 
@@ -208,10 +209,10 @@ class Attention(nn.Module):
         output = self.resid_dropout(output)
         return output
 
-# 测试Attention
+# # 测试Attention
 # def test_attn():
 #     # 创建Attention实例
-#     args = ModelConfig()
+#     args = ModelConfig(flash_attn=False)
 #     attention_model = Attention(args)
 #
 #     # 模拟输入数据
@@ -219,7 +220,7 @@ class Attention(nn.Module):
 #     seq_len = 50  # 假设实际使用的序列长度为50
 #     dim = args.dim
 #     x = torch.rand(batch_size, seq_len, dim) # 随机生成输入张量
-#
+#     print(x)
 #     freqs_cos, freqs_sin = precompute_freqs_cis(dim//args.n_heads, seq_len)
 #
 #     # 运行Attention模型
@@ -227,7 +228,7 @@ class Attention(nn.Module):
 #
 #     # attention出来之后的形状 依然是[batch_size, seq_len, dim]
 #     print("Output shape:",output.shape)
-#
+#     print(output)
 # test_attn()
 
 
