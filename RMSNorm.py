@@ -1,5 +1,6 @@
 from torch import nn
 import torch
+
 """
 RMSNorm (Root Mean Square Layer Normalization)：
     2019年提出的轻量级神经网络归一化方法，
@@ -14,8 +15,9 @@ RMSNorm (Root Mean Square Layer Normalization)：
     g - 可学习的缩放参数，用于调整归一化后特征的尺度。
 """
 
+
 class RMSNorm(nn.Module):
-    def __init__(self, dim:int, eps:float):
+    def __init__(self, dim: int, eps: float):
         super().__init__()
         # eps是为了防止除以0的情况
         self.eps = eps
@@ -27,9 +29,9 @@ class RMSNorm(nn.Module):
         # x.pow(2).mean(-1,keepdim=True)计算了输入x的平方的均值
         # torch.rsqrt是平方根的倒数，这样就得到了RMSNorm的分母部分，再加上eps防止分母为0
         # 最后乘以x，得到RMSNorm的结果
-        return x * torch.rsqrt(x.pow(2).mean(-1,keepdim=True) + self.eps)
+        return x * torch.rsqrt(x.pow(2).mean(-1, keepdim=True) + self.eps)
 
-    def forward(self,x):
+    def forward(self, x):
         # forward函数是模型的向前传播
         # 首先将输入x转为float类型，然后进行RMSNorm，最后再转回原来的数据类型
         # 最后乘以weight，这是RMSNorm的一个可学习的缩放因子
