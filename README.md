@@ -1,6 +1,6 @@
 # 自用项目
 
-本项目是基于 [Happy-LLM](https://github.com/datawhalechina/happy-llm) 教程搭建的大语言模型实现，专注于构建轻量级高效的Transformer架构模型。
+本项目是基于 [Happy-LLM](https://github.com/datawhalechina/happy-llm) 教程搭建的大语言模型实现，用于自学。
 
 ## 变更记录
 
